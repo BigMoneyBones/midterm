@@ -378,9 +378,8 @@ You can assume that every number in the array will be unique
 
 function twoSmallest(arr){
 
-    // let newArr = [];
     let small1 = arr[0];
-    let small2 = arr[1];
+    let small2 = small1 + 1;
 
     if (arr.length < 2) {
 
@@ -388,28 +387,28 @@ function twoSmallest(arr){
 
     }  
 
+
     for (let count = 0; count < arr.length; count++) {
 
         if (arr[count] < small1) {
 
             small1 = arr[count];
 
-        }
-
-    }
-            
-    for (let count = 0; count < arr.length; count++) {
-            
-        if (arr[count] < small2 && arr[count] > small1) {
-
-            small2 = arr[count];
-
         } 
 
     }
 
-    // newArr.unshift(small1);
-    // newArr.push(small2);
+    for (let count = 0; count < arr.length; count++) {
+
+        if (arr[count] > small1 && arr[count] < small2) {
+
+            small2 = arr[count];
+
+        }
+
+        // console.log(small2);
+
+    }
 
     return [small1, small2];
 
@@ -419,12 +418,70 @@ function twoSmallest(arr){
 console.log("twoSmallest");
 console.log("////////////////////////////////////////////////////////////////////////////\n");
 //Add console.logs here to test!  Feel free to format this section however you like
-
+               //       [0][1]                   
 console.log(twoSmallest([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]));
+console.log(twoSmallest([2, 1]));
 console.log(twoSmallest([2, 9, 3, 0, 8, 6, 1]));
 console.log(twoSmallest([7, 2, -11, 4, -2, 6, -8, -5, 814, 9, 120]));
 console.log(twoSmallest([1, 2]));
 console.log(twoSmallest([1]));
+console.log(twoSmallest([1, 2, 3, 4, -5, 6, 7, 8, 9, 0]));
+console.log(twoSmallest([1, -2, 3, 4, 5, 6, 7, 8, -9, 0]));
+
+
 
 console.log("\n////////////////////////////////////////////////////////////////////////////\n");
+
+// function twoSmallest(arr){
+
+//     // let newArr = [];
+//     let small1 = arr[0];
+//     let small2 = arr[1];
+
+//     if (arr.length < 2) {
+
+//         return undefined;
+
+//     }  
+
+//     for (let count = 0; count < arr.length; count++) {
+
+//         if (arr[count] < small1) {
+
+//             small1 = arr[count];
+
+//         }
+
+//     }
+            
+//     for (let count = 0; count < arr.length; count++) {
+            
+//         if (arr[count] < small2 && arr[count] > small1) {
+
+//             small2 = arr[count];
+
+//         } 
+
+//     }
+
+//     // newArr.unshift(small1);
+//     // newArr.push(small2);
+
+//     return [small1, small2];
+
+// }
+
+/* console.logs to test */
+// console.log("twoSmallest");
+// console.log("////////////////////////////////////////////////////////////////////////////\n");
+// //Add console.logs here to test!  Feel free to format this section however you like
+
+// console.log(twoSmallest([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]));
+// console.log(twoSmallest([2, 1]));
+// console.log(twoSmallest([2, 9, 3, 0, 8, 6, 1]));
+// console.log(twoSmallest([7, 2, -11, 4, -2, 6, -8, -5, 814, 9, 120]));
+// console.log(twoSmallest([1, 2]));
+// console.log(twoSmallest([1]));
+
+// console.log("\n////////////////////////////////////////////////////////////////////////////\n");
 
